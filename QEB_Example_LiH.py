@@ -11,6 +11,7 @@ from qiskit_nature.second_q.circuit.library import HartreeFock
 from qiskit_algorithms import VQE, NumPyMinimumEigensolver
 from qiskit_algorithms.optimizers import SPSA
 from qiskit.primitives import StatevectorEstimator
+from qiskit_algorithms.optimizers import COBYLA
 
 # Import our QEB ansatz
 from qeb_ansatz import QEBansatz
@@ -99,7 +100,7 @@ def main():
         num_qubits=num_qubits,
         num_particles=num_particles,
         num_spatial_orbitals=num_spatial_orbitals,
-        depth=6,  # Increase to 6 for better expressiveness with Givens rotations
+        depth=1,
         include_double=True,  # Include double excitations
         use_hartree_fock_init=True,  # Use Qiskit's HartreeFock initialization
         mapper=mapper,  # Pass mapper for proper HartreeFock construction
@@ -146,12 +147,8 @@ def main():
 
     # Create VQE solver
     estimator = StatevectorEstimator()
-    # SPSA does 2 evaluations per iteration, so maxiter=1000 → ~2000 evaluations on graph
-    # Tuned for QEB: lower perturbation to reduce noise, allow more iterations for convergence
-    optimizer = SPSA(
-        maxiter=2000,  # Increase iterations to allow better convergence
-        learning_rate=0.01,
-        perturbation=0.01,  # Reduce from 0.05 to 0.01 to avoid divergence
+    optimizer = COBYLA(
+        maxiter=300 # looks like it stops running anyway when it reaches minimum so dont need more iterations
     )
 
     vqe_solver = VQE(estimator, qeb_ansatz, optimizer, callback=callback)
