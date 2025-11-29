@@ -1,0 +1,10 @@
+{
+  "ansatz": "QEB",
+  "depth": 6,
+  "num_parameters": 468,
+  "exact_energy": -1.0608681448963089,
+  "vqe_energy": -1.0590501511842532,
+  "final_error_mha": 1.81799371205571,
+  "total_time": 278.9491491317749,
+  "total_evals": 4001
+}
