@@ -207,7 +207,7 @@ class QEBansatz(QuantumCircuit):
         return excitations
 
     def _build_double_excitations(
-        self, max_double_excitations: int = 50
+        self, max_double_excitations: int = 70
     ) -> List[Tuple[int, int, int, int]]:
         """
         Build particle-conserving double excitation pairs.
@@ -226,11 +226,9 @@ class QEBansatz(QuantumCircuit):
         excitations = []
 
         # Generate all valid 4-qubit combinations
-        for (i, j) in combinations(range(self._num_qubits), 2):
-            for (k, l) in combinations(range(self._num_qubits), 2):
-                # Ensure all four qubits are distinct and maintain ordering
-                if i < k and j < l and len(set([i, j, k, l])) == 4:
-                    excitations.append((i, j, k, l))
+        # Using combinations of 4 qubits gives us C(n,4) = C(8,4) = 70 pairs
+        for (i, j, k, l) in combinations(range(self._num_qubits), 4):
+            excitations.append((i, j, k, l))
 
         # Limit to avoid excessive circuit depth
         return excitations[:max_double_excitations]
