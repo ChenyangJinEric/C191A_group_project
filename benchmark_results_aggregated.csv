@@ -1,0 +1,6 @@
+Ansatz,CNOT_Count_mean,CNOT_Count_std,Circuit_Depth_mean,Circuit_Depth_std,Circuit_Size_mean,Circuit_Size_std,Num_Parameters_first,Total_Iterations_mean,Total_Iterations_std,Convergence_Speed_99_mean,Convergence_Speed_99_std,Total_Time_sec_mean,Total_Time_sec_std,Energy_Error_Ha_mean,Energy_Error_Ha_std,Energy_Error_Percent_mean,Energy_Error_Percent_std,State_Fidelity_mean,State_Fidelity_std,Fidelity_Percent_mean,Fidelity_Percent_std,Avg_Variance_mean,Avg_Variance_std,Gradient_Indicator_mean,Gradient_Indicator_std,Barren_Plateau_Status_<lambda>
+PC-HEA,0.0,0.0,32.0,0.0,98.0,0.0,96.0,300.0,0.0,300.0,0.0,1.578767,0.007961,0.001866,2e-05,0.175857,0.001857,0.99694,0.000148,99.693981,0.014836,0.0,0.0,0.0,0.0,N/A
+QEB-4q,0.0,0.0,3.0,0.0,12.0,0.0,12.0,265.0,20.663978,91.333333,21.93931,0.293696,0.022804,0.0,0.0,0.0,0.0,0.999733,0.000309,99.97333,0.030899,0.0,0.0,0.0,0.0,N/A
+QEB-8q,176.0,0.0,149.0,0.0,354.0,0.0,50.0,300.0,0.0,300.0,0.0,2.279885,0.087197,0.001818,0.0,0.171372,1.2e-05,0.99704,4e-06,99.703964,0.00037,0.0,0.0,0.0,0.0,N/A
+UCCSD,0.0,0.0,16.0,0.0,17.0,0.0,15.0,300.0,0.0,127.666667,15.011107,72.488004,0.322959,0.0,0.0,0.0,0.0,1.0,0.0,99.999998,0.0,0.0,0.0,0.0,0.0,N/A
+UpCCGSD,0.0,0.0,37.0,0.0,38.0,0.0,36.0,300.0,0.0,300.0,0.0,176.277582,0.761051,0.001818,0.0,0.171354,2e-06,0.997039,0.0,99.703868,1e-05,0.0,0.0,0.0,0.0,N/A
